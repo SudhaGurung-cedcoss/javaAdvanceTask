@@ -16,11 +16,11 @@ var number=/^[0-9]+$/;
             throw "ID cannot be empty";         
         }
         else{
-            document.getElementById('form').innerHTML="";
+            document.getElementById('span').innerHTML="";
         }
     }
     catch(err) {
-        document.getElementById('form').innerHTML="all Field must be filled";
+        document.getElementById('span').innerHTML="all Field must be filled";
      
     }
     
