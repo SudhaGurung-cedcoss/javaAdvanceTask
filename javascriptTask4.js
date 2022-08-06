@@ -1,20 +1,34 @@
 
 
 
-var jsonArray={
-    "employee":[{"id":1,"name":"John","totalSalary":9000},
-    {"id":2,"name":"Mark","totalSalary":8000},
-    {"id":3,"name":"Yash","totalSalary":7000}],
-    
-};
-var text=my();
-var txt="";
-for(i=0;i<text.length;i++)
-{
-txt="<tr><td>"+text[i].id+"</td><td>"+text[i].name+"</td><td>"+text[i].totalSalary+"</td></tr>";
-document.getElementById('display').innerHTML+=txt;
-}
+class Employee{
 
-function my(){
-return (this.jsonArray.employee);
-}
+     
+    createjSon(args)
+    {
+      var arg=JSON.parse(args);
+      var text="";
+      for(let i=0;i<arg.length;i++)
+      {
+        this.id=arg[i].id;
+        this.name=arg[i].name;
+        this.totalSalary=arg[i].totalSalary;
+        
+       text="<tr><td>"+this.id+"</td><td>"+this.name+"</td><td>"+this.totalSalary+"</td></tr>";
+        document.getElementById('display').innerHTML+=text;
+      }
+
+    }
+};
+
+var jsonArray='[{"id":1,"name":"John","totalSalary":9000},{"id":2,"name":"Mark","totalSalary":8000},{"id":3,"name":"Yash","totalSalary":7000}]';
+
+
+
+let obj=new Employee();
+obj.createjSon(jsonArray);
+
+
+
+
+
